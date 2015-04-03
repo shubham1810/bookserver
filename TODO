@@ -1,11 +1,12 @@
 
 ISBN (GET)
     -Return
-        --Title
-        --Author
-        --URL of image
-        --category
-        --summary
+        --Title (got from scraper)
+        --Author ()
+        --URL of image (got from scraper)
+        --category ()
+        --summary ()
+        --Ratings (got from scraper)
 
 Create Database on Parse:
     --Add data of the books to parse backend
