@@ -1,0 +1,12 @@
+
+ISBN (GET)
+    -Return
+        --Title
+        --Author
+        --URL of image
+        --category
+        --summary
+
+Create Database on Parse:
+    --Add data of the books to parse backend
+    --Only when receiving a get request form the app.
