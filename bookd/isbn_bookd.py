@@ -57,10 +57,7 @@ def get_data(isbn):
         response['title'] = str(book_name.string.strip())
         response['authors'] = author
         response['summary'] = summary
-        if image is not "~":
-            response['image'] = str(image['src'])
-        else:
-            response['image'] = ("http://ts3.mm.bing.net/th?q=" + unicode("%20".join(book_name.split(" "))) + "%20" + unicode("%20".join(author.split(" "))) + "%20book%20cover")
+        response['image'] = "http://ts3.mm.bing.net/th?q=" + unicode("%20".join(book_name.split(" "))) + "%20" + unicode("%20".join(author.split(" "))) + "%20book%20cover"
 
         try:
             response['rating'] = str(rating.string.strip())
@@ -118,8 +115,7 @@ def google_books(isbn):
                 raise Exception
         except:
             summary = "~"
-    if image == "~":
-        image = "http://ts3.mm.bing.net/th?q=" + unicode("%20".join(name.split(" "))) + "%20" + unicode("%20".join(authors.split(" "))) + "%20book%20cover"
+    image = "http://ts3.mm.bing.net/th?q=" + unicode("%20".join(name.split(" "))) + "%20" + unicode("%20".join(authors.split(" "))) + "%20book%20cover"
 
 
     response = {}
