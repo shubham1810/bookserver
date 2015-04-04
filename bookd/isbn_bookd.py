@@ -6,28 +6,34 @@ def get_data(isbn):
     try:
         page = urllib2.urlopen('http://www.indiabookstore.net/isbn/' + str(isbn))
         soup = BS(page)
-        book_name = soup.find('h1', {'class': 'bookMainTitle'})
+        try:
+            book_name = soup.find('h1', {'class': 'bookMainTitle'})
+        except:
+            book_name = " "
         print book_name.string.strip()
         rating = soup.find('div', {'class': ' col-sm-4 col-xs-12 userAggregatedRatingBox ratingPositive'})
         image = soup.find('img', {'class': 'bookMainImage'})
-        summary = soup.findAll('em')[0].string
+        try:
+            summary = soup.findAll('em')[0].string
+        except:
+            summary = " "
         authors = soup.findAll('div')
         category = "Uncategorized"
 
-        author = ""
+        author = " "
         for i in authors:
             if i.string is not None and 'Author' in i.string:
                 author = i.string[9:]
                 break
             else:
-                author = ""
-        publisher = ""
+                author = " "
+        publisher = " "
         for i in authors:
             if i.string is not None and 'Publisher' in i.string:
                 publisher = i.string[12:]
                 break
             else:
-                publisher = ""
+                publisher = " "
 
         response = {}
         response['publisher'] = str(publisher)
@@ -51,22 +57,30 @@ def google_books(isbn):
 
     book_data = data['items'][0]['volumeInfo']
 
-    name = book_data['title']
-    publisher = book_data['publisher']
-    authors = ""
+    try:
+        name = book_data['title']
+    except:
+        name = " "
+    try:
+        publisher = book_data['publisher']
+    except:
+        publisher = " "
+    authors = " "
     for i in book_data['authors']:
         if len(book_data['authors']) is not 1:
             authors = authors.join(", " + str(i))
         else:
             authors = book_data['authors'][0]
 
-    print "Entering"
-
     page = urllib2.urlopen('http://www.indiabookstore.net/isbn/' + str(isbn))
     soup = BS(page)
 
-    image = book_data['imageLinks']['thumbnail']
-    rating = book_data['averageRating']
+    try:
+        image = book_data['imageLinks']['thumbnail']
+        rating = book_data['averageRating']
+    except:
+        image = " "
+        rating = 0
     category = "Uncategorized"
 
     try:
