@@ -7,6 +7,7 @@ def get_data(isbn):
         page = urllib2.urlopen('http://www.indiabookstore.net/isbn/' + str(isbn))
         soup = BS(page)
         book_name = soup.find('h1', {'class': 'bookMainTitle'})
+        print book_name.string.strip()
         rating = soup.find('div', {'class': ' col-sm-4 col-xs-12 userAggregatedRatingBox ratingPositive'})
         image = soup.find('img', {'class': 'bookMainImage'})
         summary = soup.findAll('em')[0].string
@@ -31,11 +32,11 @@ def get_data(isbn):
         response = {}
         response['publisher'] = str(publisher)
         response['isbn'] = str(isbn)
-        response['title'] = str(book_name.string.split("\n")[1].split("    ")[5])
+        response['title'] = str(book_name.string.strip())
         response['authors'] = author
         response['summary'] = summary
         response['image'] = str(image['src'])
-        response['rating'] = str(rating.string.split("\n")[1].split(" ")[22])
+        response['rating'] = str(rating.string.strip())
         response['category'] = category
 
         return response

@@ -14,8 +14,10 @@ def apiCall(request):
         except:
             response_value = {"title": 'Error'}
 
-    saveInParse(response_value)
-
+    try:
+        saveInParse(response_value)
+    except:
+        pass
 
     return HttpResponse(json.dumps(response_value), content_type="application/json")
 
