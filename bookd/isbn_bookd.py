@@ -14,7 +14,7 @@ def get_data(isbn):
         rating = soup.find('div', {'class': ' col-sm-4 col-xs-12 userAggregatedRatingBox ratingPositive'})
         image = soup.find('img', {'class': 'bookMainImage'})
         try:
-            summary = soup.findAll('em')[0].string
+            summary = soup.findAll('p')[0].string
         except:
             summary = " "
         authors = soup.findAll('div')
