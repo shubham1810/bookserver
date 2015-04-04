@@ -49,16 +49,16 @@ def get_data(isbn):
             else:
                 publisher = "~"
 
-        if image == "~":
-        image = "http://ts3.mm.bing.net/th?q=" + str(name) + " " + str(authors) + " book cover"
-
         response = {}
         response['publisher'] = str(publisher)
         response['isbn'] = str(isbn)
         response['title'] = str(book_name.string.strip())
         response['authors'] = author
         response['summary'] = summary
-        response['image'] = str(image['src'])
+        if image is not "~":
+            response['image'] = str(image['src'])
+        else:
+            response['image'] = "http://ts3.mm.bing.net/th?q=" + str(book_name) + " " + str(author) + " book cover"
         response['rating'] = str(rating.string.strip())
         response['category'] = category
 
