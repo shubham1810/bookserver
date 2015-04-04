@@ -21,38 +21,42 @@ def get_data(isbn):
 
 
 def google_books(isbn):
-    try:
-        page = requests.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + str(isbn))
-    except:
-        pass
+    page = requests.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + str(isbn))
     data = json.loads(page.text)
 
-    try:
-        book_data = data['items'][0]['volumeInfo']
-        name = book_data['title']
-        authors = ""
-        for i in book_data['authors']:
-            if len(book_data['authors']) is not 1:
-                authors = authors.join(", " + str(i))
-            else:
-                authors = book_data['authors'][0]
+    book_data = data['items'][0]['volumeInfo']
+    name = book_data['title']
+    authors = ""
+    for i in book_data['authors']:
+        if len(book_data['authors']) is not 1:
+            authors = authors.join(", " + str(i))
+        else:
+            authors = book_data['authors'][0]
 
-        page = urllib2.urlopen('http://www.indiabookstore.net/isbn/' + str(isbn))
-        soup = BS(page)
+    page = urllib2.urlopen('http://www.indiabookstore.net/isbn/' + str(isbn))
+    soup = BS(page)
 
-        image = book_data['imageLinks']['thumbnail']
-        rating = book_data['averageRating']
-        category = "Uncategorized"
+    image = book_data['imageLinks']['thumbnail']
+    rating = book_data['averageRating']
+    category = "Uncategorized"
 
-        summary = soup.findAll('em')[0].string
-        print name
-        print authors
-        print summary
-        print image
-        print rating
-        print category
-    except:
-        pass
+    summary = soup.findAll('em')[0].string
+    '''print name
+    print authors
+    print summary
+    print image
+    print rating
+    print category'''
+
+    response = {}
+    response['title'] = name
+    response['authors'] = authors
+    response['summary'] = summary
+    response['image'] = image
+    response['rating'] = rating
+    response['category'] = category
+
+    return response
 
 if __name__ == '__main__':
     get_data(9788131710265)
