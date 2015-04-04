@@ -1,3 +1,4 @@
+from urllib import urlencode
 from bs4 import BeautifulSoup as BS
 import urllib2, requests, json
 
@@ -6,6 +7,7 @@ def get_data(isbn):
     try:
         page = urllib2.urlopen('http://www.indiabookstore.net/isbn/' + str(isbn))
         soup = BS(page)
+
         try:
             book_name = soup.find('h1', {'class': 'bookMainTitle'})
         except:
@@ -14,7 +16,7 @@ def get_data(isbn):
         try:
             rating = soup.find('div', {'class': ' col-sm-4 col-xs-12 userAggregatedRatingBox ratingPositive'})
         except:
-            rating = 0
+            pass
         try:
             image = soup.find('img', {'class': 'bookMainImage'})
         except:
@@ -58,8 +60,12 @@ def get_data(isbn):
         if image is not "~":
             response['image'] = str(image['src'])
         else:
-            response['image'] = "http://ts3.mm.bing.net/th?q=" + str(book_name) + " " + str(author) + " book cover"
-        response['rating'] = str(rating.string.strip())
+            response['image'] = ("http://ts3.mm.bing.net/th?q=" + unicode("%20".join(book_name.split(" "))) + "%20" + unicode("%20".join(author.split(" "))) + "%20book%20cover")
+
+        try:
+            response['rating'] = str(rating.string.strip())
+        except:
+            response['rating'] = str(0)
         response['category'] = category
 
         return response
@@ -113,7 +119,7 @@ def google_books(isbn):
         except:
             summary = "~"
     if image == "~":
-        image = "http://ts3.mm.bing.net/th?q=" + str(name) + " " + str(authors) + " book cover"
+        image = "http://ts3.mm.bing.net/th?q=" + unicode("%20".join(name.split(" "))) + "%20" + unicode("%20".join(authors.split(" "))) + "%20book%20cover"
 
 
     response = {}
