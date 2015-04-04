@@ -8,6 +8,9 @@ def apiCall(request):
     try:
         response_value = google_books(val)
     except:
-        response_value = {}
+        try:
+            response_value = get_data(val)
+        except:
+            response_value = {"title": 'Error'}
 
     return HttpResponse(json.dumps(response_value), content_type="application/json")

@@ -10,14 +10,33 @@ def get_data(isbn):
         rating = soup.find('div', {'class': ' col-sm-4 col-xs-12 userAggregatedRatingBox ratingPositive'})
         image = soup.find('img', {'class': 'bookMainImage'})
         summary = soup.findAll('em')[0].string
+        authors = soup.findAll('div')
+        category = "Uncategorized"
 
-        print "Book : " + str(book_name.string.split("\n")[1].split("    ")[5])
+        '''print "Book : " + str(book_name.string.split("\n")[1].split("    ")[5])
         print "ratings : " + str(rating.string.split("\n")[1].split(" ")[22])
         print "Image : " + str(image['src'])
-        print summary
+        print summary'''
+        author = ""
+        for i in authors:
+            if i.string is not None and 'Author' in i.string:
+                author = i.string[9:]
+                break
+            else:
+                author = ""
+
+        response = {}
+        response['title'] = str(book_name.string.split("\n")[1].split("    ")[5])
+        response['authors'] = author
+        response['summary'] = summary
+        response['image'] = str(image['src'])
+        response['rating'] = str(rating.string.split("\n")[1].split(" ")[22])
+        response['category'] = category
+
+        return response
 
     except urllib2.HTTPError:
-        pass
+        return {}
 
 
 def google_books(isbn):
