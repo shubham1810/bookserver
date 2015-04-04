@@ -49,6 +49,9 @@ def get_data(isbn):
             else:
                 publisher = "~"
 
+        if image == "~":
+        image = "http://ts3.mm.bing.net/th?q=" + str(name) + " " + str(authors) + " book cover"
+
         response = {}
         response['publisher'] = str(publisher)
         response['isbn'] = str(isbn)
@@ -109,6 +112,9 @@ def google_books(isbn):
                 raise Exception
         except:
             summary = "~"
+    if image == "~":
+        image = "http://ts3.mm.bing.net/th?q=" + str(name) + " " + str(authors) + " book cover"
+
 
     response = {}
     response['publisher'] = publisher
