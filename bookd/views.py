@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse
 import json
 from bookd.isbn_bookd import *
+from bookd.models import Book
 
 
 def apiCall(request):
@@ -13,4 +14,12 @@ def apiCall(request):
         except:
             response_value = {"title": 'Error'}
 
+    saveInParse(response_value)
+
+
     return HttpResponse(json.dumps(response_value), content_type="application/json")
+
+
+def saveInParse(response):
+    book_data = Book(isbn=response['isbn'], title=response['title'], publisher=response['publisher'], authors=response['authors'], rating=response['rating'], category=response['category'], image=response['image'], summary=response['summary'])
+    book_data.save()

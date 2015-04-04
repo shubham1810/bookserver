@@ -13,10 +13,6 @@ def get_data(isbn):
         authors = soup.findAll('div')
         category = "Uncategorized"
 
-        '''print "Book : " + str(book_name.string.split("\n")[1].split("    ")[5])
-        print "ratings : " + str(rating.string.split("\n")[1].split(" ")[22])
-        print "Image : " + str(image['src'])
-        print summary'''
         author = ""
         for i in authors:
             if i.string is not None and 'Author' in i.string:
@@ -24,8 +20,17 @@ def get_data(isbn):
                 break
             else:
                 author = ""
+        publisher = ""
+        for i in authors:
+            if i.string is not None and 'Publisher' in i.string:
+                publisher = i.string[12:]
+                break
+            else:
+                publisher = ""
 
         response = {}
+        response['publisher'] = str(publisher)
+        response['isbn'] = str(isbn)
         response['title'] = str(book_name.string.split("\n")[1].split("    ")[5])
         response['authors'] = author
         response['summary'] = summary
@@ -45,6 +50,7 @@ def google_books(isbn):
 
     book_data = data['items'][0]['volumeInfo']
     name = book_data['title']
+    publisher = book_data['publisher']
     authors = ""
     for i in book_data['authors']:
         if len(book_data['authors']) is not 1:
@@ -68,6 +74,8 @@ def google_books(isbn):
     print category'''
 
     response = {}
+    response['publisher'] = publisher
+    response['isbn'] = str(isbn)
     response['title'] = name
     response['authors'] = authors
     response['summary'] = summary
