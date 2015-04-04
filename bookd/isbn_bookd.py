@@ -9,10 +9,16 @@ def get_data(isbn):
         try:
             book_name = soup.find('h1', {'class': 'bookMainTitle'})
         except:
-            book_name = " "
+            book_name = "~"
         print book_name.string.strip()
-        rating = soup.find('div', {'class': ' col-sm-4 col-xs-12 userAggregatedRatingBox ratingPositive'})
-        image = soup.find('img', {'class': 'bookMainImage'})
+        try:
+            rating = soup.find('div', {'class': ' col-sm-4 col-xs-12 userAggregatedRatingBox ratingPositive'})
+        except:
+            rating = 0
+        try:
+            image = soup.find('img', {'class': 'bookMainImage'})
+        except:
+            image = "~"
         try:
             print soup.findAll('p')[0]
             summary = soup.findAll('p')[0].string
@@ -24,24 +30,24 @@ def get_data(isbn):
                 if summary is None:
                     raise Exception
             except:
-                summary = " "
+                summary = "~"
         authors = soup.findAll('div')
         category = "Uncategorized"
 
-        author = " "
+        author = "~"
         for i in authors:
             if i.string is not None and 'Author' in i.string:
                 author = i.string[9:]
                 break
             else:
-                author = " "
-        publisher = " "
+                author = "~"
+        publisher = "~"
         for i in authors:
             if i.string is not None and 'Publisher' in i.string:
                 publisher = i.string[12:]
                 break
             else:
-                publisher = " "
+                publisher = "~"
 
         response = {}
         response['publisher'] = str(publisher)
@@ -68,12 +74,12 @@ def google_books(isbn):
     try:
         name = book_data['title']
     except:
-        name = " "
+        name = "~"
     try:
         publisher = book_data['publisher']
     except:
-        publisher = " "
-    authors = " "
+        publisher = "~"
+    authors = "~"
     for i in book_data['authors']:
         if len(book_data['authors']) is not 1:
             authors = authors.join(", " + str(i))
@@ -87,7 +93,7 @@ def google_books(isbn):
         image = book_data['imageLinks']['thumbnail']
         rating = book_data['averageRating']
     except:
-        image = " "
+        image = "~"
         rating = 0
     category = "Uncategorized"
 
@@ -102,7 +108,7 @@ def google_books(isbn):
             if summary is None:
                 raise Exception
         except:
-            summary = " "
+            summary = "~"
 
     response = {}
     response['publisher'] = publisher

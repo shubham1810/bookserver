@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../studdd.in_Server/.idea/studdd.in_Server.iml" afterPath="$PROJECT_DIR$/../studdd.in_Server/.idea/studdd.in_Server.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bookd/isbn_bookd.py" afterPath="$PROJECT_DIR$/bookd/isbn_bookd.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../studdd.in_Server/server.py" afterPath="$PROJECT_DIR$/../studdd.in_Server/server.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bookd/views.py" afterPath="$PROJECT_DIR$/bookd/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../studdd.in_Server/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../studdd.in_Server/.idea/workspace.xml" />
     </list>
     <ignored path="bookserver.iws" />
@@ -35,8 +34,8 @@
       <file leaf-file-name="isbn_bookd.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bookd/isbn_bookd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.0337079" vertical-offset="1681" max-vertical-offset="2304">
-              <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.75120384" vertical-offset="1512" max-vertical-offset="2412">
+              <caret line="110" column="24" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="24" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -742,8 +741,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bookd/isbn_bookd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0337079" vertical-offset="1681" max-vertical-offset="2304">
-          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.75120384" vertical-offset="1512" max-vertical-offset="2412">
+          <caret line="110" column="24" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="24" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
