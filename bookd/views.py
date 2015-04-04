@@ -30,10 +30,10 @@ def apiCall(request):
     else:
         print "YAY"
         try:
-            response_value = get_data(val)
+            response_value = google_books(val)
         except:
             try:
-                response_value = google_books(val)
+                response_value = get_data(val)
             except:
                 response_value = {"title": 'Error'}
 

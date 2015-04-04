@@ -14,9 +14,17 @@ def get_data(isbn):
         rating = soup.find('div', {'class': ' col-sm-4 col-xs-12 userAggregatedRatingBox ratingPositive'})
         image = soup.find('img', {'class': 'bookMainImage'})
         try:
+            print soup.findAll('p')[0]
             summary = soup.findAll('p')[0].string
+            if summary is None:
+                raise Exception
         except:
-            summary = " "
+            try:
+                summary = soup.findAll('em')[0].string
+                if summary is None:
+                    raise Exception
+            except:
+                summary = " "
         authors = soup.findAll('div')
         category = "Uncategorized"
 
@@ -86,8 +94,15 @@ def google_books(isbn):
     try:
         print soup.findAll('p')[0]
         summary = soup.findAll('p')[0].string
+        if summary is None:
+            raise Exception
     except:
-        summary = " "
+        try:
+            summary = soup.findAll('em')[0].string
+            if summary is None:
+                raise Exception
+        except:
+            summary = " "
 
     response = {}
     response['publisher'] = publisher
