@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="337c15c6-5ce3-400a-8a85-9047ca18390c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bookd/isbn_bookd.py" afterPath="$PROJECT_DIR$/bookd/isbn_bookd.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../studdd.in_Server/server.py" afterPath="$PROJECT_DIR$/../studdd.in_Server/server.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../studdd.in_Server/.idea/studdd.in_Server.iml" afterPath="$PROJECT_DIR$/../studdd.in_Server/.idea/studdd.in_Server.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bookd/views.py" afterPath="$PROJECT_DIR$/bookd/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../studdd.in_Server/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../studdd.in_Server/.idea/workspace.xml" />
     </list>
     <ignored path="bookserver.iws" />
@@ -31,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="isbn_bookd.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="isbn_bookd.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bookd/isbn_bookd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1105" max-vertical-offset="1728">
-              <caret line="84" column="35" selection-start-line="77" selection-start-column="4" selection-end-line="84" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.56661314" vertical-offset="943" max-vertical-offset="1782">
+              <caret line="72" column="33" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -43,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bookd/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76886034" vertical-offset="277" max-vertical-offset="990">
-              <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="990">
+              <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -107,10 +107,10 @@
         <option value="$PROJECT_DIR$/TODO" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/bookd/credentials.py" />
-        <option value="$PROJECT_DIR$/bookd/isbn_bookd.py" />
         <option value="$PROJECT_DIR$/bookd/urls.py" />
         <option value="$PROJECT_DIR$/bookd/models.py" />
         <option value="$PROJECT_DIR$/bookd/views.py" />
+        <option value="$PROJECT_DIR$/bookd/isbn_bookd.py" />
       </list>
     </option>
   </component>
@@ -720,24 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookd/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookd/isbn_bookd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1105" max-vertical-offset="1728">
-          <caret line="84" column="35" selection-start-line="77" selection-start-column="4" selection-end-line="84" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../studdd.in_Server/templates/giveaway.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.333334" vertical-offset="378" max-vertical-offset="1080">
@@ -758,10 +740,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bookd/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76886034" vertical-offset="277" max-vertical-offset="990">
-          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="990">
+          <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookd/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
+          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookd/isbn_bookd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56661314" vertical-offset="943" max-vertical-offset="1782">
+          <caret line="72" column="33" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>

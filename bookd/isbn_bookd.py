@@ -50,6 +50,7 @@ def google_books(isbn):
     data = json.loads(page.text)
 
     book_data = data['items'][0]['volumeInfo']
+
     name = book_data['title']
     publisher = book_data['publisher']
     authors = ""
@@ -59,6 +60,8 @@ def google_books(isbn):
         else:
             authors = book_data['authors'][0]
 
+    print "Entering"
+
     page = urllib2.urlopen('http://www.indiabookstore.net/isbn/' + str(isbn))
     soup = BS(page)
 
@@ -66,13 +69,11 @@ def google_books(isbn):
     rating = book_data['averageRating']
     category = "Uncategorized"
 
-    summary = soup.findAll('em')[0].string
-    '''print name
-    print authors
-    print summary
-    print image
-    print rating
-    print category'''
+    try:
+        print soup.findAll('p')[0]
+        summary = soup.findAll('p')[0].string
+    except:
+        summary = " "
 
     response = {}
     response['publisher'] = publisher
@@ -83,6 +84,8 @@ def google_books(isbn):
     response['image'] = image
     response['rating'] = rating
     response['category'] = category
+
+    print response
 
     return response
 
