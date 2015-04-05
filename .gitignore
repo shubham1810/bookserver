@@ -3,3 +3,4 @@
 configuration
 TODO
 bookd/credentials.py
+*.pyc
