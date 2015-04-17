@@ -4,3 +4,5 @@ configuration
 TODO
 bookd/credentials.py
 *.pyc
+.idea/*
+config.ini

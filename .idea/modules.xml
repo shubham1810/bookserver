@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/bookserver.iml" filepath="$PROJECT_DIR$/.idea/bookserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/../control/.idea/control.iml" filepath="$PROJECT_DIR$/../control/.idea/control.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../studdd.in_Server/.idea/studdd.in_Server.iml" filepath="$PROJECT_DIR$/../studdd.in_Server/.idea/studdd.in_Server.iml" />
     </modules>
   </component>
 </project>

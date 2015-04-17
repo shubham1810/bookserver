@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, render_to_response
 import json
 from bookd.isbn_bookd import *
 from bookd.models import Book
@@ -48,3 +48,7 @@ def apiCall(request):
 def saveInParse(response):
     book_data = Book(isbn=response['isbn'], title=response['title'], publisher=response['publisher'], authors=response['authors'], rating=float(str(response['rating'])), category=response['category'], image=response['image'], summary=response['summary'])
     book_data.save()
+
+
+def homePage(request):
+    return render_to_response('homepage.html')

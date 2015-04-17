@@ -9,4 +9,5 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^api/$', 'bookd.views.apiCall'),
+    url(r'^$', 'bookd.views.homePage'),
 )
