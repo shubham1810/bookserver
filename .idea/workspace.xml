@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="337c15c6-5ce3-400a-8a85-9047ca18390c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookserver_uwsgi.ini" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config.ini" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bookserver/settings.py" afterPath="$PROJECT_DIR$/bookserver/settings.py" />
     </list>
     <ignored path="bookserver.iws" />
     <ignored path=".idea/workspace.xml" />

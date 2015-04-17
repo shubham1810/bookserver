@@ -23,7 +23,7 @@ BASE_DIR = PACKAGE_ROOT
 SECRET_KEY = '&$k0tlxtu5989ad8*+-i_2)#82vt#w3uf_qijd_f%!_wa2&)vt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
